@@ -46,7 +46,7 @@
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-8 text-center text-lg-start">
                                 <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Community //</h6>
-                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Rural community</h1>
+                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Hunter community</h1>
                                 <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         <!--     <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
@@ -108,8 +108,75 @@
     </div>
 </div> -->
 <!-- Service End -->
-<!-- About Start -->
-<div id="aboutus" class="container-xxl py-5">
+<!-- членство Start -->
+<h6 class="text-primary text-uppercase text-center">// членство //</h6>
+<div class="container ">
+    <div id="header1-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="img/about.jpg" alt="Image">
+                <div class="carousel-caption d-flex align-items-center ">
+                   <div class="container">
+                        <div class="row align-items-center justify-content-center justify-content-lg-start">
+                            <div class="col-10 col-lg-8 text-center text-lg-start">
+                                <h6 class="text-white text-uppercase text-center mb-3 animated slideInDown">// Член ассоциации//</h6>
+                                <a href="#"><h1 class="display-3  text-uppercase text-center text-white mb-4 pb-3 animated slideInDown">НПО <br>«Парчам»</h1></a>
+                            </div>
+                            <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
+                                <a href="" class="btn btn-outline-light py-3 px-5 animated slideInDown">Подробнее<i class="fa fa-arrow-right ms-3"></i></a>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-4"></div>
+                            <div class="d-lg-none  animated zoomIn ">
+                                <a href="" class="text-center btn btn-outline-light py-3 px-5 animated slideInDown">Подробнее<i class="fa fa-arrow-right ms-3"></i></a>
+                            </div> 
+                            <div class="col-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="img/about.jpg" alt="Image">
+                <div class="carousel-caption d-flex align-items-center">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center justify-content-lg-start">
+                            <div class="col-10 col-lg-8 text-center text-lg-start">
+                                <h6 class="text-white text-uppercase text-center mb-3 animated slideInDown">// Член ассоциации//</h6>
+                                <a href="#"><h1 class="display-3  text-uppercase text-center text-white mb-4 pb-3 animated slideInDown">НПО <br>«Пахлавон»</h1></a>
+                            </div>
+                            <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
+                                <a href="" class="btn btn-outline-light py-3 px-5 animated slideInDown">Подробнее<i class="fa fa-arrow-right ms-3"></i></a>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-4"></div>
+                            <div class="d-lg-none  animated zoomIn ">
+                                <a href="" class="text-center btn btn-outline-light py-3 px-5 animated slideInDown">Подробнее<i class="fa fa-arrow-right ms-3"></i></a>
+                            </div> 
+                            <div class="col-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header1-carousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header1-carousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- членство END -->
+<!-- членство -2 Variant start -->
+
+<!-- <div id="aboutus" class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6 pt-4" style="min-height: 400px;">
@@ -175,8 +242,9 @@
             </div>
         </div>
     </div>
-</div>
-<!-- About End -->
+</div> -->
+
+<!-- членство -2 Variant end -->
 <!-- Fact Start -->
 <!-- <div class="container-fluid fact bg-dark my-5 py-5">
     <div class="container">
@@ -205,7 +273,7 @@
     </div>
 </div> -->
 <!-- Fact End -->
-<!-- Service Start -->
+<!-- Наши истории Start -->
 <div class="container-xxl service py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -306,11 +374,11 @@
         </div>
     </div>
 </div>
-<!-- Service End -->
-<!-- Booking Start -->
+<!-- Наши истории End -->
+<!-- Пожертвования Start -->
 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 @if ($don != 0)
-    <h6 id="donate" class="text-primary text-uppercase">// Наши пожертвования //</h6>
+    <h6 id="donate" class="text-primary text-uppercase">// Пожертвования //</h6>
 @endif
 </div>
 <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -367,7 +435,7 @@
         </div>
     </div>
 </div>
-<!-- Booking End -->
+<!-- Пожертвования End -->
 <!-- Team Start -->
 <div id="ourexperts" class="container-xxl py-5">
     <div class="container">

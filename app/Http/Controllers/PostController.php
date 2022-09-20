@@ -6,15 +6,28 @@ use App\Models\Post;
 use App\Models\Addonate;
 use App\Models\Donate;
 use Illuminate\Http\Request;
+use App\Classes\Payler\PaylerAPI;
+
 
 class PostController extends Controller
 {
     
-    public function home()
+    public function home(Request $request)
     {
         $donates = Addonate::all();
         $don = $donates->sum('status');
-        return view('index', compact('donates','don'));
+        $is_payment_success = false;
+        $url_param = $request->input();
+        
+        if(  isset($url_param['order_id']) ){
+
+            $payler = new PaylerAPI();
+            $result = $payler->GetStatus($url_param['order_id']);
+            
+            if($result ==='Charged') $is_payment_success = true;
+        }
+
+        return view('index', compact('donates','don','is_payment_success'));
     }
 
 

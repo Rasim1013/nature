@@ -10,8 +10,16 @@
         </div>
     </div>
     <div class="card-body">
-        <a class="btn btn-primary" href="{{route('donates.index')}}">Back</a>
-        <a class="btn btn-secondary" href="/donates/{{$id}}/edit">Donate Now</a>
+        <form action="{{ route('checkout') }}" method="POST">
+            @csrf
+            <input type="hidden" name="product_name" value="{{ $donates->header }}">
+            <input type="hidden" name="amount" value="{{ $donates->funding_goal }}">
+            <a class="btn btn-primary" href="{{route('donates.index')}}">Back</a>
+            <input type="submit" class="btn btn-secondary" value="Donate Now">
+            {{--
+                <a class="text-white  bg-dark p-2" href="{{ route('donates.show', $donates->id) }}"></i>Donate Now</a>
+            --}}
+        </form>
     </div>
 </div>
-@endsection
+@endsection 

@@ -29,7 +29,7 @@
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="" style="width: 16rem; height: 16rem;" role="status">
             <!-- <span class="sr-only">Loading...</span> -->
-            <img src="{{asset('img/nature-lovers-logo.png')}}" class="w-100">
+            <img src="{{asset('img/nature-lovers-logo-min.png')}}" class="w-100">
         </div>
     </div>
     <!-- Spinner End -->
@@ -40,7 +40,7 @@
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <a target="_blank" href="https://goo.gl/maps/MAL3tAMK5Q6dagab9">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>736200, Vamar, Rushon, GBAO, Tajikistan</small>
+                    <small>736200, Вамар, Рушан, ГБАО, ТАДЖИКИСТАН</small>
                     </a>
                 </div>
             </div>
@@ -51,7 +51,8 @@
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-outline-light me-0" href="{{route('login')}}">L</i></a>
                 </div>
             </div>
         </div>
@@ -60,7 +61,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="/" style="margin-left: 5px;" class="navbar-brand d-flex align-items-center px-lg-5">
-            <img class="col-lg-3 w-50" src="{{asset('img/nature-lovers-logo.png')}}">
+            <img class="col-lg-5 w-50" src="{{asset('img/nature-lovers-logo.png')}}">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -92,6 +93,14 @@
                         <a href="management" class="dropdown-item">УПРАВЛЕНИЕ</a>
                         <a href="indicator" class="dropdown-item">ИНДИКАТОР</a>
                     </div>
+                    <!-- For mobile start -->
+                    <div class="d-lg-none">
+                        <a href="{{route('prog.project')}}" class="text-black-50 dropdown-item link">ПРОГРАММА</a>
+                        <a href="project" class="text-black-50 dropdown-item">ПРОЕКТ</a>
+                        <a href="management" class="text-black-50 dropdown-item">УПРАВЛЕНИЕ</a>
+                        <a href="indicator" class="text-black-50 dropdown-item">ИНДИКАТОР</a>
+                    </div>
+                    <!-- For mobile end -->
                 </div><div class="nav-item dropdown">
                     <a href="consultation" class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">КОНСУЛТАЦИЯ</a>
                     <!-- <div class="dropdown-menu fade-up m-0">
@@ -108,6 +117,14 @@
                         <a href="{{route('use.assets')}}" class="dropdown-item align-items-center">ПОЛЬЗОВАНИЕ АКТИВАМИ АССОЦИАЦИИ</a>
                         <a href="#ourclients" class="dropdown-item align-items-center">ИТ-УСЛУГИ</a>
                     </div>
+                    <!-- For mobile start -->
+                    <div class="d-lg-none">
+                        <a href="{{route('account.service')}}" class="text-black-50 dropdown-item link">БУХГАЛТЕРСКИЕ УСЛУГИ</a>
+                        <a href="{{route('legal.service')}}" class="text-black-50 dropdown-item">ЮРИДИЧЕСКИЕ УСЛУГИ</a>
+                        <a href="{{route('use.assets')}}" class="text-black-50 dropdown-item align-items-center">ПОЛЬЗОВАНИЕ АКТИВАМИ АССОЦИАЦИИ</a>
+                        <a href="#ourclients" class="text-black-50 dropdown-item align-items-center">ИТ-УСЛУГИ</a>
+                    </div>
+                    <!-- For mobile end -->
                 </div>
                 <div class="nav-item dropdown">
                     <a href="{{route('contact')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">КОНТАКТЫ</a>
@@ -119,7 +136,7 @@
                     </div> -->
                 </div>
             </div>
-            <a href="{{route('home.page')}}#donate" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">DONATE<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{route('home.page')}}#donate" class="btn btn-primary py-4 px-lg-2.5 d-none d-lg-block">DONATE<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->

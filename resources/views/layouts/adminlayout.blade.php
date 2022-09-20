@@ -30,10 +30,10 @@
     <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">Munavar Shamirov  <i class="bi bi-person-circle"></i></a>
+        <a class="nav-link" data-toggle="dropdown" href="#">{{ Auth::user()->name }} {{ Auth::user()->surname }} <i class="bi bi-person-circle"></i></a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="{{route('logout')}}" class="dropdown-item">
             <i class="bi bi-box-arrow-left"></i>  Exit</a>
         </div>
       </li>
@@ -68,6 +68,12 @@
             <a href="#" class="nav-link">
               <i class="bi bi-balloon-heart text-danger"></i>
               <p>Others</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('home.page')}}" class="nav-link">
+              <i class="bi bi-diagram-3 text-secondary"></i>
+              <p>Go To Site</p>
             </a>
           </li>
         </ul>
