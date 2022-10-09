@@ -6,5 +6,6 @@ class SessionAnswer
   public $amount;
   public $session_id;
   public $order_id;
+  public $email;
 }
 ?>

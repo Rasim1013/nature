@@ -15,8 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            //$table->foreignId('role_id')->default(1)->constrained()->on('roles');
-            //$table->foreignId('status')->default(1)->constrained()->on('status_users');
+            $table->foreignId('role_id')->default(1)->constrained()->on('roles');
+            $table->foreignId('status')->default(1)->constrained()->on('status_users');
             $table->string('name');
             $table->string('surname');
             $table->string('phone')->unique();
@@ -28,10 +28,12 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('about')->nullable();
+            $table->string('last_online_at')->nullable();
+            $table->string('telegram_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

@@ -8,5 +8,6 @@ class GetStatusAnswer
   public $recurrent_template_id;
   public $order_id;
   public $payment_type; 
+  public $email;
 }
 ?>

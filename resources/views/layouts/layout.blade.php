@@ -68,7 +68,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('home.page')}}" class="nav-item nav-link active">ГЛАВНАЯ</a>
+                <!-- <a href="{{route('home.page')}}" class="nav-item nav-link active">ГЛАВНАЯ</a> -->
                 <div class="nav-item dropdown">
                     <a href="{{route('about.us')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">О НАС</a>
                     <!-- <div class="dropdown-menu fade-up m-0">
@@ -77,41 +77,41 @@
                         <a href="#ourclients" class="dropdown-item">Our Clients</a>
                     </div> -->
                 </div>
-                <div class="nav-item dropdown">
+               <!--  <div class="nav-item dropdown">
                     <a href="{{route('members')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">ЧЛЕНЫ АССОЦИАЦИИ</a>
-                    <!-- <div class="dropdown-menu fade-up m-0">
+                    <div class="dropdown-menu fade-up m-0">
                         <a href="#ourexperts" class="dropdown-item link">Our Experts</a>
                         <a href="#ourclients" class="dropdown-item">Our Clients</a>
                         <a href="#ourclients" class="dropdown-item">Our Clients</a>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">ПРОГРАММЫ И ПРОЕКТЫ</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="{{route('prog.project')}}" class="dropdown-item link">ПРОГРАММА</a>
-                        <a href="project" class="dropdown-item">ПРОЕКТ</a>
                         <a href="management" class="dropdown-item">УПРАВЛЕНИЕ</a>
                         <a href="indicator" class="dropdown-item">ИНДИКАТОР</a>
                     </div>
                     <!-- For mobile start -->
                     <div class="d-lg-none">
-                        <a href="{{route('prog.project')}}" class="text-black-50 dropdown-item link">ПРОГРАММА</a>
-                        <a href="project" class="text-black-50 dropdown-item">ПРОЕКТ</a>
                         <a href="management" class="text-black-50 dropdown-item">УПРАВЛЕНИЕ</a>
                         <a href="indicator" class="text-black-50 dropdown-item">ИНДИКАТОР</a>
                     </div>
                     <!-- For mobile end -->
-                </div><div class="nav-item dropdown">
+                </div>
+               <!--  <div class="nav-item dropdown">
                     <a href="consultation" class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">КОНСУЛТАЦИЯ</a>
-                    <!-- <div class="dropdown-menu fade-up m-0">
+                    <div class="dropdown-menu fade-up m-0">
                         <a href="#ourexperts" class="dropdown-item link">Our Experts</a>
                         <a href="#ourclients" class="dropdown-item">Our Clients</a>
                         <a href="#ourclients" class="dropdown-item">Our Clients</a>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                 <div class="nav-item dropdown">
                     <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown-toggle">УСЛУГИ</a>
                     <div class="dropdown-menu fade-up m-0">
+                        <a href="{{route('consultation')}}" class="dropdown-item link">ЭКОЛОГИЧЕСКИЙ КОНСАЛТИНГ</a>
+                        <a href="{{route('project')}}" class="dropdown-item link">ПОДГОТОВКА ДОКУМЕНТАЦИИ</a>
                         <a href="{{route('account.service')}}" class="dropdown-item link">БУХГАЛТЕРСКИЕ УСЛУГИ</a>
                         <a href="{{route('legal.service')}}" class="dropdown-item">ЮРИДИЧЕСКИЕ УСЛУГИ</a>
                         <a href="{{route('use.assets')}}" class="dropdown-item align-items-center">ПОЛЬЗОВАНИЕ АКТИВАМИ АССОЦИАЦИИ</a>
@@ -119,6 +119,8 @@
                     </div>
                     <!-- For mobile start -->
                     <div class="d-lg-none">
+                        <a href="{{route('consultation')}}" class="text-black-50 dropdown-item link">ЭКОЛОГИЧЕСКИЙ КОНСАЛТИНГ</a>
+                        <a href="{{route('project')}}" class="text-black-50 dropdown-item link">ПОДГОТОВКА ДОКУМЕНТАЦИИ</a>
                         <a href="{{route('account.service')}}" class="text-black-50 dropdown-item link">БУХГАЛТЕРСКИЕ УСЛУГИ</a>
                         <a href="{{route('legal.service')}}" class="text-black-50 dropdown-item">ЮРИДИЧЕСКИЕ УСЛУГИ</a>
                         <a href="{{route('use.assets')}}" class="text-black-50 dropdown-item align-items-center">ПОЛЬЗОВАНИЕ АКТИВАМИ АССОЦИАЦИИ</a>

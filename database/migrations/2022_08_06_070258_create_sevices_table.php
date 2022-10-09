@@ -18,6 +18,7 @@ class CreateSevicesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('expert');
+            $table->foreignId('lang_id')->default(1)->constrained()->on('langs');
             $table->timestamps();
         });
     }

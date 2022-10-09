@@ -53,7 +53,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('addonates.index')}}" class="nav-link">
               <i class="bi bi-apple text-info"></i>
               <p>Donates</p>
             </a>
@@ -65,9 +65,9 @@
             </a>
           </li>
            <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('persons.index')}}" class="nav-link">
               <i class="bi bi-balloon-heart text-danger"></i>
-              <p>Others</p>
+              <p>Users</p>
             </a>
           </li>
           <li class="nav-item">
@@ -93,6 +93,7 @@
       </div><!-- /.container-fluid -->
     </div>
   </div>
+<!-- <h5 class="text-uppercase card-title text-center text-danger w-100 mt-5">Уважаемый пользователь ваш статус не подтвержден. За подробной информации обращайтесь к администратору сайта.!!!</h5> -->
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong> &copy; 2022 <a href="#">NATURE-LOVERS</a>.</strong>

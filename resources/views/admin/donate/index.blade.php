@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Adminpanel Parcham')
+@section('title','Adminpanel Nature Lovers')
 @section('main_content')
 <div class="container">
 	<a href="{{route('addonates.create')}}" class="btn btn-primary">Add Donate</a>
@@ -26,6 +26,5 @@
 	  </tbody>
 	</table>
 </div>
-
 
 @endsection

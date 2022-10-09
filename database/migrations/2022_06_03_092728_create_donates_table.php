@@ -21,11 +21,8 @@ class CreateDonatesTable extends Migration
             $table->foreignId('id_donate')->constrained()->on('addonates');
             $table->string('email')->nullable();
             $table->string('country')->nullable();
-            $table->string('zip')->nullable();
-            $table->string('address')->nullable();
-            $table->string('unit')->nullable();
+            $table->string('is_publish')->nullable();
             $table->string('city')->nullable();
-            $table->string('state_province')->nullable();
             $table->string('credit_card')->nullable();
             $table->string('expiration')->nullable();
             $table->string('cvv')->nullable();

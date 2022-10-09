@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -24,13 +25,33 @@ class UserController extends Controller
 
      public function loginstore(Request $request)
     {
-        if (Auth::attempt([
+        
+        if (Auth::attempt([ 
             'phone' => $request->phone,
             'password' => $request->password,
+            'status' =>2
+        ])){
+            Alert::warning('УВАЖАЕМЫЙ' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ВАШ АККАУНТ ЗАБЛОКИРОВАН. ОБРАШАЙТЕС   К   АДМИНИМСТРАТОРУ САЙТА' );
+            Auth::logout();
+        return redirect()->route('home.page');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>1
+        ])){
+            Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ДОЖДИТЕСЬ ПОДТВЕРЖДЕНИЕ РОЛИ!!!' );
+            return redirect()->route('home.page');
+            //return view('admin.donate.pending');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>2
         ])){
             $user=Auth::user();
             $now = date('Y-m-d H:i:s');//Текушее время
             $user->update(['last_online_at'=>$now]);
+
+            Alert::warning('WELCOME TO ADMIN PANEL');
             return redirect()->route('addonates.index');
             }
             Alert::warning('Введен неправилный логин или пароль');
@@ -65,21 +86,21 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        //$name = $user->name;
-        //$surname = $user->surname;
-        //$group = $user->gr_name;
-       // $token = "5192338294:AAFc_eK3HynL4xAKoAaz4IQvyW3-woCc6PE";
-       // $chat_dehot = "-1001572433920"; //Для того чтобы узнать ИД чата переходим по ссылке и вводим ИД бота https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates
-        //$pending = urlencode("<a href='http://dehot.gaja.tj/pendings/create'>ССЫЛКЕ</a>");
-       // $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_dehot}&parse_mode=html&text=В Группе <b>$group</b> зарегистрирован новый пользователь <b>$name   $surname.</b> Администратор данной группы просьба перейты по <b>$pending  👈 </b> для подтверждение регистрации 🙏", "r");
-         //if($sendToTelegram) {
-       //     Alert::success('Регистрация прошла успешно. Введите логин ипарол для авторизации');
-      //      return redirect()->route('login'); //Агар хохем ки сахифаи авторизация ба направит кунад
-       // } else {
-       //    Alert::warning('Поторите действия позже!!!');
+        $name = $user->name;
+        $surname = $user->surname;
+        $group = $user->gr_name;
+        $token = "5192338294:AAFc_eK3HynL4xAKoAaz4IQvyW3-woCc6PE";
+        $chat_info_nature_lovers = "-1001688669795"; //Для того чтобы узнать ИД чата переходим по ссылке и вводим ИД бота https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates
+        $pending = urlencode("<a href='http://dehot.gaja.tj/pendings/create'>ССЫЛКЕ</a>");
+        $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_info_nature_lovers}&parse_mode=html&text=На сайте зарегистрирован новый пользователь <b>$name   $surname.</b> ", "r");
+         if($sendToTelegram) {
+            Alert::success('Регистрация прошла успешно. Введите логин ипарол для авторизации');
+            return redirect()->route('login'); //Агар хохем ки сахифаи авторизация ба направит кунад
+        } else {
+           Alert::warning('Поторите действия позже!!!');
            return redirect()->route('login');
         }
-   // }
+    }
 
 //////////////////////////////////////////////////////////
 

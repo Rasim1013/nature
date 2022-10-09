@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Adminpanel Parcham')
+@section('title','Adminpanel Nature Lovers')
 @section('main_content')
 <form class="needs-validation" action="{{ route('addonates.update', [$donate->id]) }}" method="post" enctype="multipart/form-data">
 	@csrf

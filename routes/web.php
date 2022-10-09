@@ -9,6 +9,8 @@ use App\Http\Controllers\AddonateController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 
@@ -17,6 +19,9 @@ use App\Http\Controllers\UserController;
 Route::group(['middleware' => 'auth','admin'], function () {
 
     Route::resource('addonates', AddonateController::class);
+    Route::resource('persons', PersonController::class);
+    Route::get('pending', [AddonateController::class, 'pending'])->name('pending');
+
     
 });
 

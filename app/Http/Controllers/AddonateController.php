@@ -6,6 +6,7 @@ use App\Models\Addonate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 class AddonateController extends Controller
 {
     /**
@@ -15,6 +16,9 @@ class AddonateController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->role_id == 1) {
+            return redirect('pending');
+        }
         $donates = Addonate::all();
         return view('admin.donate.index', compact('donates'));
     }
@@ -27,6 +31,11 @@ class AddonateController extends Controller
     public function create()
     {
         return view ('admin.donate.create');
+    }
+
+       public function pending()
+    {
+        return view ('admin.donate.pending');
     }
 
     /**
@@ -54,6 +63,7 @@ class AddonateController extends Controller
             'description' => $request->description,
             'funding_goal'=> $request->funding_goal,
             'final_day'=> $request->final_day,
+            'user_id'=>Auth::user()->id
         ]);
         Alert::success('Операция выполнено успешно!!!');
             return redirect('addonates');

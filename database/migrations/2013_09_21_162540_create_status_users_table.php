@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExpertsTable extends Migration
+class CreateStatusUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateExpertsTable extends Migration
      */
     public function up()
     {
-        Schema::create('experts', function (Blueprint $table) {
+        Schema::create('status_users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('surname');
-            $table->string('position');
-            $table->string('about')->nullable();
-            $table->string('photo')->nullable();
-            $table->foreignId('lang_id')->default(1)->constrained()->on('langs');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateExpertsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('experts');
+        Schema::dropIfExists('status_users');
     }
 }

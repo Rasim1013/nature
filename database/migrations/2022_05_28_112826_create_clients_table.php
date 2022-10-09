@@ -20,6 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('position');
             $table->string('comments')->nullable();
             $table->string('photo')->nullable();
+            $table->foreignId('lang_id')->default(1)->constrained()->on('langs');
             $table->timestamps();
         });
     }

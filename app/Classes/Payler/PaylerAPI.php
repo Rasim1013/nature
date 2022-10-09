@@ -19,19 +19,18 @@ class PaylerAPI
 		// $this->success_url =  env('PAYLER_SUCCESS_URL');
 	}
 		
-	public function StartSession($amount, $type, $account, $product)
+	public function StartSession($amount, $type, $account, $product, $email)
 	{
 		$order_id = strtoupper(bin2hex(openssl_random_pseudo_bytes(8)));
 		$amount = $amount * 100;
 		$currency = "TJS";
-		$email = "leica530@mail.ru";
+		$email = $email;
 		$template = "";
 		$lang = "en";
 		$userdata = "";
 		$recurrent = 0;
 		$pay_page_param = "";
 		$total = 1;
-		
 		$url = "https://sandbox.payler.com/gapi/StartSession?key=$this->key&type=$type&order_id=$order_id&amount=$amount&currency=$currency&product=$account&total=$total&recurrent=$recurrent&email=$email";
 		$amount = $amount / 100;
 		
@@ -75,7 +74,6 @@ class PaylerAPI
 		{
 			//echo "https://sandbox.payler.com/gapi/Pay?session_id=".$session_id;
 			$url = "https://sandbox.payler.com/gapi/Pay?session_id=".$session_id;
-
 			return redirect()->to($url)->send();
 		}
 	}
@@ -136,7 +134,6 @@ class PaylerAPI
 	private function SendRequest($url)
 	{
 		$process = curl_init($url);
-		
 		curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-type: x-www-form-urlencoded'));
 		curl_setopt($process, CURLOPT_HTTPHEADER, array('Accept: application/json'));
 		curl_setopt($process, CURLOPT_HEADER, 1);
@@ -158,6 +155,7 @@ class PaylerAPI
 		
 		curl_close($process);
 		return $body;
+		
 	}
 }
 

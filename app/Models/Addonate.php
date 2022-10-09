@@ -11,7 +11,7 @@ class Addonate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['header','location','photo','description','funding_goal','funding_raised','final_day','status'];
+    protected $fillable = ['header','location','photo','description','funding_goal','funding_raised','final_day','status','user_id'];
 
      public static function uploadimage(Request $request, $image = NULL)
     {

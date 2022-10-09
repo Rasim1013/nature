@@ -23,6 +23,8 @@ class CreateAddonatesTable extends Migration
             $table->string('funding_raised')->default(0);
             $table->string('final_day')->nullable();
             $table->string('status')->default(1);
+            $table->foreignId('user_id')->constrained()->on('users')->onDelete('cascade');
+            $table->foreignId('lang_id')->default(1)->constrained()->on('langs');
             $table->timestamps();
         });
     }

@@ -46,7 +46,7 @@ class DonateController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'country' => $request->country,
-            'zip' => $request->zip,
+            'is_publish' => $request->is_publish,
             'address' => $request->address,
             'unit' => $request->unit,
             'city' => $request->city,
