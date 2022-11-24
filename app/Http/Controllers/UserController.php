@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Group;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
@@ -37,7 +38,45 @@ class UserController extends Controller
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
             'password' => $request->password,
-            'role_id' =>1
+            'role_id' =>1,
+            'group_id'=>1
+        ])){
+            Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ВЫ ЗАРЕГИСТРИРОВАЛИСЬ КАК ВОЛОНТЕР' );
+            return redirect()->route('home.page');
+            //return view('admin.donate.pending');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>1,
+            'group_id'=>2
+        ])){
+            Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=2!!!' );
+            return redirect()->route('home.page');
+            //return view('admin.donate.pending');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>1,
+            'group_id'=>3
+        ])){
+            Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=3!!!' );
+            return redirect()->route('home.page');
+            //return view('admin.donate.pending');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>1,
+            'group_id'=>4
+        ])){
+            Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=4!!!' );
+            return redirect()->route('home.page');
+            //return view('admin.donate.pending');
+        }elseif (Auth::attempt([ 
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'role_id' =>1,
+            'group_id'=>5
+
         ])){
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ДОЖДИТЕСЬ ПОДТВЕРЖДЕНИЕ РОЛИ!!!' );
             return redirect()->route('home.page');
@@ -61,7 +100,9 @@ class UserController extends Controller
 
     public function registration()
     {
-        return view('auth.register');
+        $groups = Group::all(); 
+        return view('auth.register', compact('groups'));
+
     }
 
 ///////////////////////////////////////////////////////////
@@ -75,7 +116,7 @@ class UserController extends Controller
             'email'=> 'unique:users',
             'password'=> 'confirmed',
         ]);
-        if ($request->group_id == '--- Выберите группу ---') {
+        if ($request->group_id == '--- Что вас интересует? ---') {
             Alert::warning('Выберите группу, к которой хотите присоединиться');
             return redirect()->back();
         }
@@ -83,16 +124,20 @@ class UserController extends Controller
             'name' => $request->name,
             'surname' => $request->surname,
             'phone' => $request->phone,
+            'group_id' => $request->group_id,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        //Location start
+        $ip = file_get_contents('https://api.iplocation.net/?ip=185.121.1.238');
+        $location = json_decode($ip);//Location end
         $name = $user->name;
         $surname = $user->surname;
-        $group = $user->gr_name;
+        $group = $user->group_name->name;
         $token = "5192338294:AAFc_eK3HynL4xAKoAaz4IQvyW3-woCc6PE";
         $chat_info_nature_lovers = "-1001688669795"; //Для того чтобы узнать ИД чата переходим по ссылке и вводим ИД бота https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates
         $pending = urlencode("<a href='http://dehot.gaja.tj/pendings/create'>ССЫЛКЕ</a>");
-        $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_info_nature_lovers}&parse_mode=html&text=На сайте зарегистрирован новый пользователь <b>$name   $surname.</b> ", "r");
+        $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_info_nature_lovers}&parse_mode=html&text=На сайте зарегистрирован новый пользователь <b>$name   $surname.</b> как <b>$group</b> Страна: $location->country_name. $location->country_code2. IP: $location->ip. Провайдер: $location->isp", "r");
          if($sendToTelegram) {
             Alert::success('Регистрация прошла успешно. Введите логин ипарол для авторизации');
             return redirect()->route('login'); //Агар хохем ки сахифаи авторизация ба направит кунад

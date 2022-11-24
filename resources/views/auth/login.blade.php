@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Пароль">
+          <input type="password" autocomplete="off" name="password" class="form-control" placeholder="Пароль">
           @error('password')
             <span class="text-red-400" role="alert">
               <strong>{{ $message }}</strong>

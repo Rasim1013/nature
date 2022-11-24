@@ -4,16 +4,17 @@
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner" >
             <div class="carousel-item active">
                 <img class="w-100" src="img/carousel-bg-1.jpg" alt="Image">
                 <div class="carousel-caption d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
-                            <div class="col-10 col-lg-8 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Community //</h6>
-                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Individuals (volunteers)</h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
+                            <div class="col-10 col-lg-12 text-lg-start">
+                                <h7 class="display-3  text-center text-uppercase text-white mb-4 pb-3 animated slideInDown">Путешествуйте, сотрудничайте, оказывайте влияние</h7>
+                                <h6 class="text-white text-center mb-3 animated slideInDown"> Путешествуйте безопасно в качестве волонтера, получайте опыт, меняющий жизнь, и оказывайте положительное влияние на мир.</h6>
+                                <br>
+                                <a href="{{route('registration')}}" class="btn btn-primary py-3 px-5 animated slideInDown">Присоединяйтесь к сообществу<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                             <!-- <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="img/carousel-1.png" alt="">
@@ -489,7 +490,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+           <!--  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="img/team-1.jpg" alt="">
@@ -503,7 +504,7 @@
                         <small>IT-Manager</small>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

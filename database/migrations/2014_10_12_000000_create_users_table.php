@@ -9,13 +9,14 @@ class CreateUsersTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return void 
      */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('role_id')->default(1)->constrained()->on('roles');
+            $table->foreignId('group_id')->constrained()->on('groups');
             $table->foreignId('status')->default(1)->constrained()->on('status_users');
             $table->string('name');
             $table->string('surname');

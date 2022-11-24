@@ -52,6 +52,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          @if (Auth::user()->group_id >= 5)
           <li class="nav-item">
             <a href="{{route('addonates.index')}}" class="nav-link">
               <i class="bi bi-apple text-info"></i>
@@ -68,6 +69,13 @@
             <a href="{{route('persons.index')}}" class="nav-link">
               <i class="bi bi-balloon-heart text-danger"></i>
               <p>Users</p>
+            </a>
+          </li>
+          @endif
+          <li class="nav-item">
+            <a href="{{route('applications.index')}}" class="nav-link">
+              <i class="bi bi-balloon-heart text-danger"></i>
+              <p>Applications</p>
             </a>
           </li>
           <li class="nav-item">

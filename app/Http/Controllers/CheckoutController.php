@@ -39,10 +39,7 @@ class CheckoutController extends Controller
             'phone' => $request->phone,
             'country' => $request->country,
             'is_publish' => $request->is_publish,
-            'address' => $request->address,
             'city' => $request->city,
-            'credit_card' => $request->credit_card,
-            'expiration' => $request->expiration,
         ]);
         $id_donate = Addonate::find($request->id);
         $gift = Donate::where('id_donate',$id_donate->id)->get()->sum('gift');

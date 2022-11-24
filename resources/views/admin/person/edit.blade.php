@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Edit Adminpanel Nature Lovers')
+@section('title','Edit Person Profile Adminpanel Nature Lovers')
 @section('main_content')
 <form class="needs-validation" action="{{ route('persons.update', [$user->id]) }}" method="post" enctype="multipart/form-data">
 	@csrf

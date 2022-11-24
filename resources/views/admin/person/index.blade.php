@@ -19,7 +19,9 @@
 	      <td class="@if($user->status == 0) bg-danger @endif">{{$user->name}}  {{$user->surname}}</td>
 	      <td class="@if($user->status == 0) bg-danger @endif">
 	      	<a class="btn btn-success" href="{{ route('persons.show', $user->id) }}">Detail</a>
+	      	@if(Auth::user()->role_id==2)
 	      	<a class="btn btn-warning" href="{{ route('persons.edit', $user->id) }}">Edit</a>
+	      	@endif
 	      </td>
 	    </tr>
 	    @endforeach

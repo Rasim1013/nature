@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ route('login') }}" style="font-family: Palatino Linotype;"><b>ҶАМОАТИ  ДЕХОТ</b></a>
+    <a href="{{ route('login') }}" style="font-family: Palatino Linotype;"><b class="text-uppercase">Nature-Lovers</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

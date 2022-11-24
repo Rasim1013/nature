@@ -63,6 +63,19 @@
           </div>
         </div>
         <div class="input-group mb-3">
+            <select class="form-control" name="group_id">
+              <option>--- Что вас интересует? ---</option>
+                @foreach($groups as $group)
+                  <option class="form-control" value="{{ $group->id }}">{{$group->name}} - ({{$group->city}})  </option>
+                  @endforeach
+                </select>
+              @error('group')
+              <span class="text-red-400" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+        </div>
+        <div class="input-group mb-3">
           <input type="password" name="password" class="form-control" placeholder="Пароль">
           @error('password')
             <span class="text-red-400" role="alert">

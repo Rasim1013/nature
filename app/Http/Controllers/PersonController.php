@@ -51,7 +51,8 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('admin.person.show', compact('user'));
     }
 
     /**
@@ -62,6 +63,9 @@ class PersonController extends Controller
      */
     public function edit($id)
     {
+        if (Auth::user()->role_id == 1){
+            return back();
+        }
         $user = User::find($id);
         return view('admin.person.edit', compact('user'));
     }
