@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Addonate;
+use App\Models\Lang;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -30,7 +31,8 @@ class AddonateController extends Controller
      */
     public function create()
     {
-        return view ('admin.donate.create');
+        $language = Lang::all(); 
+        return view ('admin.donate.create', compact('language'));
     }
 
        public function pending()
@@ -49,7 +51,6 @@ class AddonateController extends Controller
         $request->validate([
             'photo' => 'image',
         ]);
-
         $data = $request->all(); 
         $data['photo'] = Addonate::uploadimage($request);
         if ($request->photo == null) {
@@ -63,7 +64,8 @@ class AddonateController extends Controller
             'description' => $request->description,
             'funding_goal'=> $request->funding_goal,
             'final_day'=> $request->final_day,
-            'user_id'=>Auth::user()->id
+            'user_id'=> $request->auth_user,
+            'langs' => $request->lng,
         ]);
         Alert::success('Операция выполнено успешно!!!');
             return redirect('addonates');

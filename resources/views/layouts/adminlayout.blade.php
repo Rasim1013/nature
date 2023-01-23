@@ -65,13 +65,13 @@
               <p>Posts</p>
             </a>
           </li>
+          @endif
            <li class="nav-item">
             <a href="{{route('persons.index')}}" class="nav-link">
-              <i class="bi bi-balloon-heart text-danger"></i>
+              <i class="bi bi-people-fill text-primary"></i>
               <p>Users</p>
             </a>
           </li>
-          @endif
           <li class="nav-item">
             <a href="{{route('applications.index')}}" class="nav-link">
               <i class="bi bi-balloon-heart text-danger"></i>
@@ -80,8 +80,122 @@
           </li>
           <li class="nav-item">
             <a href="{{route('home.page')}}" class="nav-link">
-              <i class="bi bi-diagram-3 text-secondary"></i>
+              <i class="bi bi-diagram-3 text-primary text-opacity-50"></i>
               <p>Go To Site</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-box-arrow-down-right text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-broadcast text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-boxes text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-chat-dots text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-brush text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-bug-fill text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-check-all text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-bullseye text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-calendar-heart-fill text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-clipboard2-check text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-dice-3 text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-dpad text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-dribbble text-warning"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-eye-fill text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-eye-slash-fill text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-file-earmark-fill text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-file-font text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-flag text-success"></i>
+              <p>Reserve</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-geo-alt text-success"></i>
+              <p>Reserve</p>
             </a>
           </li>
         </ul>
@@ -104,7 +218,7 @@
 <!-- <h5 class="text-uppercase card-title text-center text-danger w-100 mt-5">Уважаемый пользователь ваш статус не подтвержден. За подробной информации обращайтесь к администратору сайта.!!!</h5> -->
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong> &copy; 2022 <a href="#">NATURE-LOVERS</a>.</strong>
+    <strong> &copy; 2023 <a href="#">NATURE-LOVERS</a>.</strong>
   </footer>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

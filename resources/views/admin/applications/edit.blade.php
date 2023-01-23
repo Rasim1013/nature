@@ -64,9 +64,47 @@
 	</div>
 	<div class="modal-footer">
 		<a href="{{route('applications.index')}}" class="btn btn-secondary" data-dismiss="modal">Назад</a>
+		@if($application->status_id != 3)
 		<button type="submit" class="btn btn-primary">Обновит</button>
+		@endif
 	</div>
 </form>
+<div class="row">
+	@if ($application->status_id==1 && $user !== 5)
+	<div class="col-2">
+		<form class="needs-validation" action="{{ route('app.stat', [$application->id]) }}" method="post" enctype="multipart/form-data">
+			@csrf
+		    @method('PUT')
+					<input type="text" name="check" hidden value="1" >
+		  <div class="modal-footer">
+				<button type="submit" class="btn btn-success">Отправит на согласование</button>
+			</div>
+		</form>
+	</div>
+	@endif
+	@if ($application->status_id==2 && $user == 5)
+	<div class="col-2">
+		<form class="needs-validation" action="{{ route('app.stat', [$application->id]) }}" method="post" enctype="multipart/form-data">
+			@csrf
+		    @method('PUT')
+					<input type="text" name="check" hidden value="2" >
+		  <div class="modal-footer">
+				<button type="submit" class="btn btn-danger">Отправит на корректировку</button>
+			</div>
+		</form>
+	</div>
+	<div class="col-2">
+		<form class="needs-validation" action="{{ route('app.stat', [$application->id]) }}" method="post" enctype="multipart/form-data">
+			@csrf
+		    @method('PUT')
+					<input type="text" name="check" hidden value="3" >
+		  <div class="modal-footer">
+				<button type="submit" class="btn btn-success"><i class="bi bi-check-all text-light"></i>Согласовано</button>
+			</div>
+		</form>
+	</div>
+	@endif
+</div>
 @endsection
 
 

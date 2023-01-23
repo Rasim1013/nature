@@ -25,6 +25,7 @@
 			<input type="date" name="date_of_birthday"  class="form-control" id="validationCustom02"  value="{{ $user->date_of_birthday }}" required>
 		</div> 
 	</div>
+	@if (Auth::user()->group_id==5)
 	<div class="form-row">
 		<div class="col-md-12 mb-3">
 			<label for="validationCustom03">Статус</label>
@@ -43,6 +44,7 @@
 			</select>
 		</div>
 	</div>
+	@endif
 	<div class="modal-footer">
 		<a href="{{route('persons.index')}}" class="btn btn-secondary" data-dismiss="modal">Назад</a>
 		<button type="submit" class="btn btn-primary">Обновит</button>

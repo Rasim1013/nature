@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     use HasFactory;
-protected $fillable = ['app_name','user_id','name_org','typ_org','name_surname','position','addres','phone','email','partner_name','partner_type','priority_id','proj_object','proj_activ','inovat_proj','support_proj','funding_donors'];
+protected $fillable = ['app_name','user_id','status_id','name_org','typ_org','name_surname','position','addres','phone','email','partner_name','partner_type','priority_id','proj_object','proj_activ','inovat_proj','support_proj','funding_donors'];
+
+public function app_stat() {
+         return $this->belongsTo(Status::class, 'status_id');
+     }
     
 }

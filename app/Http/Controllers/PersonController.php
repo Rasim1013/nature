@@ -15,9 +15,6 @@ class PersonController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->role_id == 1) {
-            return redirect('pending');
-        }
         $users = User::all();
         return view('admin.person.index', compact('users'));
     }
@@ -63,10 +60,10 @@ class PersonController extends Controller
      */
     public function edit($id)
     {
-        if (Auth::user()->role_id == 1){
+        $user = User::find($id);
+        if (Auth::user()->id != $user->id && Auth::user()->role_id != 2){
             return back();
         }
-        $user = User::find($id);
         return view('admin.person.edit', compact('user'));
     }
 
@@ -92,7 +89,10 @@ class PersonController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $user = User::find($id);
+         $user->delete();
+         Alert::success('Изменение  внесено успешно');
+         return back();
     }
 }
 

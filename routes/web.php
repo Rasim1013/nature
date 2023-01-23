@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth','admin'], function () {
     Route::resource('addonates', AddonateController::class);
     Route::resource('persons', PersonController::class);
     Route::resource('applications', ApplicationsController::class);
+    Route::put('appstat/{id}', [ApplicationsController::class, 'app_stat'])->name('app.stat');
     Route::get('pending', [AddonateController::class, 'pending'])->name('pending');
 
 });

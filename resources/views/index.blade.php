@@ -29,9 +29,9 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-8 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Community //</h6>
-                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Rural community</h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Сообщество //</h6>
+                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Сельское сообщество</h1>
+                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Читать больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         <!--     <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="img/carousel-2.png" alt="">
@@ -46,9 +46,9 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-8 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Community //</h6>
-                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Hunter community</h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Сообщество //</h6>
+                                <h1 class="display-3  text-uppercase text-white mb-4 pb-3 animated slideInDown">Сообщество охотников</h1>
+                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Читать больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         <!--     <div class="col-lg-4 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="img/carousel-2.png" alt="">
@@ -286,19 +286,19 @@
                 <div class="nav w-100 nav-pills me-4">
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 " data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
                         <!-- <i class="fa fa-car-side fa-2x me-3"></i> -->
-                        <h4 class="m-0">Firuz Davlatmahmadov</h4>
+                        <h4 class="m-0">Фируз Давлатмамадов</h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
                         <!-- <i class="fa fa-car fa-2x me-3"></i> -->
-                        <h4 class="m-0">Bartang Valley & Parcham </h4>
+                        <h4 class="m-0">Долина Бартанг и Парчам </h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
                         <!-- <i class="fa fa-cog fa-2x me-3"></i> -->
-                        <h4 class="m-0">Intelligence Community</h4>
+                        <h4 class="m-0">Разведывательное сообщество</h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
                         <!-- <i class="fa fa-oil-can fa-2x me-3"></i> -->
-                        <h4 class="m-0">Protection and sustainable of mountain ungulates(Tajikistan)</h4>
+                        <h4 class="m-0">Защита и устойчивое развитие горных копытных (Таджикистан)</h4>
                     </button>
                 </div>
             </div>
@@ -314,9 +314,9 @@
                             </div>
                             <div class="col-md-6">
                                 <!-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> -->
-                                <p class="mb-4">After Firuz Davlatmahmadov discovered that a snow leopard had killed his livestock, he faced a difficult decision.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Source: <b>landofsnowleopard.org</b></p>
-                                <a href="https://landofsnowleopard.org/story/firuz-davlatmahmadov/" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">После того, как Фируз Давлатмахмадов обнаружил, что снежный барс убил его домашний скот, перед ним встал непростой вопрос.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Источник: <b>landofsnowleopard.org</b></p>
+                                <a href="https://landofsnowleopard.org/story/firuz-davlatmahmadov/" class="btn btn-primary py-3 px-5 mt-3">Читать Больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -330,9 +330,9 @@
                             </div>
                             <div class="col-md-6">
                                 <!-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> -->
-                                <p class="mb-4">Bartang Valley & Parcham Conservancy | Tajikistan Scenery Act IV.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Source: <b>Sergio channel(youtube.com)</b></p>
-                                <a href="https://www.youtube.com/watch?v=k8BofpLnCi0" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Долина Бартанг и заповедник Парчам | Декорации Таджикистана Акт IV.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Источник: <b>Sergio channel(youtube.com)</b></p>
+                                <a href="https://www.youtube.com/watch?v=k8BofpLnCi0" class="btn btn-primary py-3 px-5 mt-3">Читать Больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -346,9 +346,9 @@
                             </div>
                             <div class="col-md-6">
                                 <!-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> -->
-                                <p class="mb-4">Community-Based Wildlife Conservation in Bartang Valley</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Source: <b>Parcham NGO(tajwildlife.org)</b></p>
-                                <a href="https://tajwildlife.org/wp-content/uploads/2022/03/new.pdf" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Общественная охрана дикой природы в долине Бартанг</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Источник: <b>Парчам НПО(tajwildlife.org)</b></p>
+                                <a href="https://tajwildlife.org/wp-content/uploads/2022/03/new.pdf" class="btn btn-primary py-3 px-5 mt-3">Читать Больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -363,10 +363,10 @@
                             <div class="col-md-6">
                                 <!-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> -->
                                 <p class="mb-4">
-                                    The sustainable use of wild mountain ungulates by local peoplefor eco-tourism, hunting tourism and subsistence hunting stimulates the protection of the populations and habitats of these species thus providing an alternative and adapted land-use option contributing to climate resilience trough biodiversity conservation, avoidance of desertification and diversification of land-use.
+                                    Устойчивое использование диких горных копытных местным населением для экотуризма, охотничьего туризма и натуральной охоты стимулирует защиту популяций и местообитаний этих видов, тем самым обеспечивая альтернативный и адаптированный вариант землепользования, способствуя устойчивости к изменению климата за счет сохранения биоразнообразия, предотвращения опустынивание и диверсификация землепользования.
                                 </p>
-                                <p><i class="fa fa-check text-success me-3"></i>Source: <b>qcat.wocat.net</b></p>
-                                <a href="https://tajwildlife.org/wp-content/uploads/2022/03/new.pdf" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p><i class="fa fa-check text-success me-3"></i>Источник: <b>qcat.wocat.net</b></p>
+                                <a href="https://tajwildlife.org/wp-content/uploads/2022/03/new.pdf" class="btn btn-primary py-3 px-5 mt-3">Читать Больше<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -455,8 +455,8 @@
                         </div>
                     </div>
                     <div class="bg-light text-center p-4">
-                        <h5 class="fw-bold mb-0">Munavar Shamirov</h5>
-                        <small>Project Manager</small>
+                        <h5 class="fw-bold mb-0">Мунавар Шамиров</h5>
+                        <small>Проект Менечер</small>
                     </div>
                 </div>
             </div>
@@ -470,8 +470,8 @@
                         </div>
                     </div>
                     <div class="bg-light text-center p-4">
-                        <h5 class="fw-bold mb-0">Anboz Davlatqadamov</h5>
-                        <small>Financial Director</small>
+                        <h5 class="fw-bold mb-0">Анбоз Давлаткадамов</h5>
+                        <small>Финансовый Директор</small>
                     </div>
                 </div>
             </div>
@@ -485,8 +485,8 @@
                         </div>
                     </div>
                     <div class="bg-light text-center p-4">
-                        <h5 class="fw-bold mb-0">Davlatmirov Nasim</h5>
-                        <small>Regional Expert</small>
+                        <h5 class="fw-bold mb-0">Давлатмиров Насим</h5>
+                        <small>Региональный Эксперт</small>
                     </div>
                 </div>
             </div>

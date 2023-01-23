@@ -22,7 +22,7 @@ class UserController extends Controller
     }
 
 
-//////////////////////////////////////////////////////////
+/////////////////////////////Autorization/////////////////////////////
 
      public function loginstore(Request $request)
     {
@@ -32,6 +32,9 @@ class UserController extends Controller
             'password' => $request->password,
             'status' =>2
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('УВАЖАЕМЫЙ' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ВАШ АККАУНТ ЗАБЛОКИРОВАН. ОБРАШАЙТЕС   К   АДМИНИМСТРАТОРУ САЙТА' );
             Auth::logout();
         return redirect()->route('home.page');
@@ -41,8 +44,11 @@ class UserController extends Controller
             'role_id' =>1,
             'group_id'=>1
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ВЫ ЗАРЕГИСТРИРОВАЛИСЬ КАК ВОЛОНТЕР' );
-            return redirect()->route('home.page');
+            return redirect()->route('pending');
             //return view('admin.donate.pending');
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
@@ -50,8 +56,11 @@ class UserController extends Controller
             'role_id' =>1,
             'group_id'=>2
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=2!!!' );
-            return redirect()->route('home.page');
+            return redirect()->route('pending');
             //return view('admin.donate.pending');
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
@@ -59,8 +68,11 @@ class UserController extends Controller
             'role_id' =>1,
             'group_id'=>3
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=3!!!' );
-            return redirect()->route('home.page');
+            return redirect()->route('pending');
             //return view('admin.donate.pending');
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
@@ -68,8 +80,11 @@ class UserController extends Controller
             'role_id' =>1,
             'group_id'=>4
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'VASH ID=4!!!' );
-            return redirect()->route('home.page');
+            return redirect()->route('pending');
             //return view('admin.donate.pending');
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
@@ -78,8 +93,11 @@ class UserController extends Controller
             'group_id'=>5
 
         ])){
+            $user=Auth::user();
+            $now = date('Y-m-d H:i:s');//Текушее время
+            $user->update(['last_online_at'=>$now]);
             Alert::warning('ДОБРО ПОЖАЛОВАТЬ!!!' .  ' '  . Auth::user()->name .  ' '  . Auth::user()->surname . ' '  . 'ДОЖДИТЕСЬ ПОДТВЕРЖДЕНИЕ РОЛИ!!!' );
-            return redirect()->route('home.page');
+            return redirect()->route('pending');
             //return view('admin.donate.pending');
         }elseif (Auth::attempt([ 
             'phone' => $request->phone,
@@ -96,7 +114,7 @@ class UserController extends Controller
             Alert::warning('Введен неправилный логин или пароль');
             return redirect()->back();
     }
-//////////////////////////////////////////////////////////
+//////////////////////////////Registration GET////////////////////////////
 
     public function registration()
     {
@@ -105,7 +123,7 @@ class UserController extends Controller
 
     }
 
-///////////////////////////////////////////////////////////
+///////////////////////////Registration POST////////////////////////////////
 
     public function registrationstore(Request $request)
     {
@@ -129,14 +147,15 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
         //Location start
-        $ip = file_get_contents('https://api.iplocation.net/?ip=185.121.1.238');
+        $user_ip = $_SERVER['REMOTE_ADDR'];
+        $ip = file_get_contents('https://api.iplocation.net/?ip='.$user_ip);
         $location = json_decode($ip);//Location end
         $name = $user->name;
         $surname = $user->surname;
         $group = $user->group_name->name;
         $token = "5192338294:AAFc_eK3HynL4xAKoAaz4IQvyW3-woCc6PE";
         $chat_info_nature_lovers = "-1001688669795"; //Для того чтобы узнать ИД чата переходим по ссылке и вводим ИД бота https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates
-        $pending = urlencode("<a href='http://dehot.gaja.tj/pendings/create'>ССЫЛКЕ</a>");
+        //$pending = urlencode("<a href='http://dehot.gaja.tj/pendings/create'>ССЫЛКЕ</a>");
         $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_info_nature_lovers}&parse_mode=html&text=На сайте зарегистрирован новый пользователь <b>$name   $surname.</b> как <b>$group</b> Страна: $location->country_name. $location->country_code2. IP: $location->ip. Провайдер: $location->isp", "r");
          if($sendToTelegram) {
             Alert::success('Регистрация прошла успешно. Введите логин ипарол для авторизации');

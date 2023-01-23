@@ -87,12 +87,15 @@ class ApplicationsController extends Controller
      */
     public function edit($id)
     {
-        if (Auth::user()->role_id == 1){
-            return back();
-        }
+        $user = Auth::user()->group_id;
         $application = Application::find($id);
         $priority = Priority::all();
-        return view('admin.applications.edit', compact('application','priority'));
+        if (Auth::user()->group_id = 5){
+            return view('admin.applications.edit', compact('application','priority','user'));
+        }elseif (Auth::user()->id != $application->user_id){
+            return back();
+                }
+        return view('admin.applications.edit', compact('application','priority','user'));
     }
 
     /**
@@ -108,6 +111,24 @@ class ApplicationsController extends Controller
         $applications->update($request->all());
         Alert::success('Операция выполнено успешно');
         return redirect('applications');
+    }
+
+    public function app_stat(Request $request, $id)
+    {
+        $check = $request->check;
+        if ($check == 1)
+        {
+            $now=2;
+        }elseif ($check == 2) {
+            $now=1;
+        }else {
+            $now=3;
+        }
+        $applications = Application::find($id);
+        $applications->update(['status_id'=>$now]);
+        Alert::success('Операция выполнено успешно');
+        return redirect('applications');
+        dd(Auth::user()->group_id);
     }
 
     /**

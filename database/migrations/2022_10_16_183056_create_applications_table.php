@@ -17,6 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->id();
             $table->string('app_name');
             $table->string('user_id')->constrained()->on('users');
+            $table->foreignId('status_id')->default(1)->constrained()->on('statuses');
             $table->string('name_org')->nullable();
             $table->string('typ_org')->nullable();
             $table->string('name_surname');

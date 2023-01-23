@@ -9,18 +9,22 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Название заявки</th>
-              <th scope="col">Operation</th>
+              <th scope="col">Статус</th>
+              <th scope="col">Операции</th>
             </tr>
           </thead>
           <tbody>
             @foreach($applications as $application)
-            @if ($application->user_id==Auth::user()->id)
-            <tr>
+            @if ($application->user_id==Auth::user()->id || Auth::user()->group_id==5)
+            <tr class="@if($application->status_id == 3) bg-success @endif">
               <th class="@if($application->status > 0) bg-danger @endif" scope="row">{{$application->id}}</th>
               <td class="@if($application->status > 0) bg-danger @endif">{{$application->app_name}}</td>
+              <td class="@if($application->status > 0) bg-danger @endif">{{$application->app_stat->stat_name}}</td>
               <td class="@if($application->status > 0) bg-danger @endif">
-                <a class="btn btn-success" href="{{ route('applications.show', $application->id) }}">Detail</a>
-                <a class="btn btn-warning" href="{{ route('applications.edit', $application->id) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('applications.show', $application->id) }}">Подробно</a>
+                @if ($application->status_id == 1 || Auth::user()->group_id==5)
+                <a class="btn btn-warning" href="{{ route('applications.edit', $application->id) }}">Редактировать</a>
+                @endif
               </td>
             </tr>
             @endif

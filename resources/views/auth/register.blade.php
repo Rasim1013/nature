@@ -66,8 +66,10 @@
             <select class="form-control" name="group_id">
               <option>--- Что вас интересует? ---</option>
                 @foreach($groups as $group)
+                @if ($group->id != 5)
                   <option class="form-control" value="{{ $group->id }}">{{$group->name}} - ({{$group->city}})  </option>
-                  @endforeach
+                @endif
+                @endforeach
                 </select>
               @error('group')
               <span class="text-red-400" role="alert">
